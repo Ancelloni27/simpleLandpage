@@ -1,0 +1,354 @@
+/*VARIÁVEIS*/
+
+* {
+    box-sizing: border-box;
+}
+
+
+:root {
+    /*Cores*/
+    --cor-bg: #181818;
+    --cor-destaque: #A452E6;
+    --cor-branca: #ffffff;
+    --cor-escura: #1a1a1a;
+    --cor-borda: #333333;
+    --cor-texto-primaria: #cccccc;
+    --cor-texto-secundaria: #888888;
+    --cor-btn-whatsapp: #25d366;
+    --cor-btn-email: #e74c3c;
+    --cor-btn-linkedin: #0077b5;
+
+    /*Tipografia*/
+    --familia-fonte: 'Roboto', sans-serif;
+    --tamanho-fonte-lg: 35.2px;
+    --tamanho-fonte-md: 25.6px;
+    --tamanho-fonte-sm: 19.2px;
+    --peso-fonte-regular: 400;
+    --peso-fonte-semi: 600;
+    --peso-fonte-negrito: 700;
+    --altura-linha: 1.6;
+
+    /*Espaçamento*/
+    --espaco-sm: 8px;
+    --espaco-md: 22px;
+    --espaco-lg: 24px;
+
+    /*Design*/
+    --raio: 22px;
+    --transicao: 0.3s ease;
+    --largura-barra-lateral: 272px;
+    --tamanho-perfil: 216px;
+}
+
+/*ESTILOS BASE*/
+
+body {
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    padding: var(--espaco-md);
+    font-family: var(--familia-fonte);
+    background: linear-gradient(-45deg, #0d0d0d, #3b1a5a, #121212, #5e2a82);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    background-attachment: fixed;
+    
+    color: var(--cor-texto-primaria);
+    line-height: var(--altura-linha);
+}
+
+
+hr {
+    display: none;
+}
+
+/*SIDEBAR - EFEITO GLASS REFORÇADO*/
+
+.sidebar {
+    box-sizing: border-box;
+    width: var(--largura-barra-lateral);
+    padding: var(--espaco-lg) var(--espaco-md);
+    border-radius: var(--raio);
+    background-color: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6); 
+}
+
+
+.sidebar-titulo {
+    margin: var(--espaco-sm);
+    font-size: 28.8px;
+    font-weight: var(--peso-fonte-negrito);
+    text-align: center;
+    color: var(--cor-branca);
+}
+
+
+.botoes-contato {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-md);
+}
+
+/*LAYOUT PRINCIPAL*/
+
+.container-principal {
+    flex: 1;
+    overflow-y: auto;
+}
+
+
+.container-principal>section {
+    margin: var(--espaco-sm);
+}
+
+/*PERFIL*/
+
+.secao-perfil {
+    text-align: center;
+}
+
+
+.foto-perfil {
+    width: var(--tamanho-perfil);
+    object-fit: cover;
+}
+
+
+.nome {
+    margin: var(--espaco-sm);
+    font-size: var(--tamanho-fonte-lg);
+    font-weight: var(--peso-fonte-negrito);
+    color: var(--cor-branca);
+}
+
+
+.profissao {
+    margin: var(--espaco-sm);
+    font-size: var(--tamanho-fonte-md);
+    font-weight: var(--peso-fonte-negrito);
+    color: var(--cor-branca);
+}
+
+
+.localizacao {
+    margin: var(--espaco-sm);
+    font-size: 13.6px;
+    color: var(--cor-texto-primaria);
+}
+
+
+.resumo {
+    margin: var(--espaco-lg);
+    font-size: var(--tamanho-fonte-sm);
+    color: var(--cor-texto-primaria);
+    line-height: 1.7;
+}
+
+
+.resumo strong {
+    color: var(--cor-destaque);
+}
+
+/*CARDS*/
+
+
+.titulo-secao {
+    margin: var(--espaco-lg);
+    font-size: var(--tamanho-fonte-lg);
+    font-weight: var(--peso-fonte-negrito);
+    text-align: center;
+    color: var(--cor-branca);
+}
+
+
+.grade-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--espaco-md);
+    margin: var(--espaco-lg);
+}
+
+
+.card {
+    padding: var(--espaco-lg) var(--espaco-md);
+    border-radius: var(--raio);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.03); 
+    backdrop-filter: blur(18px); 
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    cursor: default;
+    transition: all var(--transicao);
+}
+
+
+.card:hover {
+    filter: brightness(1.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+
+.icone {
+    display: block;
+    margin: var(--espaco-sm);
+    font-size: 40px;
+    color: var(--cor-destaque);
+}
+
+
+.card h3 {
+    margin: var(--espaco-sm);
+    font-size: var(--tamanho-fonte-md);
+    font-weight: var(--peso-fonte-semi);
+    color: var(--cor-branca);
+}
+
+
+.card p {
+    font-size: 13.6px;
+    color: var(--cor-texto-secundaria);
+}
+
+/*BOTÕES GLASS*/
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--espaco-sm);
+    padding: var(--espaco-sm) var(--espaco-md);
+    border-radius: var(--raio);
+    font-size: 13.6px;
+    font-weight: var(--peso-fonte-semi);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transicao);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.btn:hover {
+    filter: brightness(1.3);
+    transform: scale(1.02);
+}
+
+
+.btn-whatsapp {
+    background-color: rgba(37, 211, 102, 0.2);
+    color: var(--cor-branca);
+}
+
+
+.btn-email {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: var(--cor-branca);
+}
+
+
+.btn-linkedin {
+    background-color: rgba(0, 119, 181, 0.2);
+    color: var(--cor-branca);
+}
+
+
+.btn-download {
+    margin: var(--espaco-md);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--cor-branca);
+}
+
+/*RODAPÉ*/
+
+.rodape {
+    margin: var(--espaco-sm);
+    text-align: center;
+}
+
+
+.copyright {
+    margin: 0;
+    font-size: 12px;
+    color: var(--cor-texto-secundaria);
+}
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: var(--espaco-lg) var(--espaco-md);
+    }
+
+    .botoes-contato {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .btn {
+        font-size: 13.6px;
+    }
+
+    .btn span {
+        display: none;
+    }
+
+
+    .nome {
+        font-size: 28.8px;
+    }
+
+    .titulo-secao {
+        font-size: var(--tamanho-fonte-md);
+    }
+
+    .grade-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .container-principal {
+        padding: var(--espaco-sm) 8px;
+    }
+
+    .nome {
+        font-size: 25.6px;
+    }
+
+    .profissao {
+        font-size: var(--tamanho-fonte-sm);
+    }
+
+    .card {
+        padding: var(--espaco-md) var(--espaco-sm);
+    }
+
+    .icone {
+        font-size: 32px;
+    }
+
+    .btn {
+        padding: 4px 6px;
+        font-size: 12.8px;
+    }
+}
+
+/* ANIMAÇÃO DE FUNDO */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
